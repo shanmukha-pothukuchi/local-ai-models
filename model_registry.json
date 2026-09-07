@@ -214,4 +214,4 @@
       "notes": "Smallest vision-capable .litertlm available: 1.30 GB, ~2.1 GB peak RAM on CPU (Raspberry Pi 5 figure), one 512x512 image per turn. Ungated, so served straight from Hugging Face. The model card says low-end Android GPUs do not beat CPU for decode, hence CPU default. Borderline on a 4 GB phone."
     }
   ]
-}\n
+}
