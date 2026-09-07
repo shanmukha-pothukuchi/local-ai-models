@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "remoteUrl": "https://raw.githubusercontent.com/shanmukha-pothukuchi/local-ai-models/main/model_registry.json",
+  "updatedAt": "2026-09-07",
+  "models": [
+    {
+      "id": "gemma-4-e2b-it",
+      "displayName": "Gemma 4 E2B IT",
+      "format": "litertlm",
+      "source": {
+        "type": "huggingface",
+        "repo": "litert-community/gemma-4-E2B-it-litert-lm",
+        "file": "gemma-4-E2B-it.litertlm",
+        "gated": false,
+        "variants": [
+          {
+            "file": "gemma-4-E2B-it-gpu.litertlm",
+            "sizeBytes": 2008432640,
+            "label": "GPU-optimised build",
+            "backends": [
+              "GPU"
+            ]
+          },
+          {
+            "file": "gemma-4-E2B-it_qualcomm_sm8750.litertlm",
+            "sizeBytes": 3016294400,
+            "label": "Snapdragon 8 Elite build",
+            "socMatch": [
+              "sm8750"
+            ]
+          },
+          {
+            "file": "gemma-4-E2B-it_Google_Tensor_G5.litertlm",
+            "sizeBytes": 3113545589,
+            "label": "Tensor G5 build",
+            "socMatch": [
+              "tensor_g5"
+            ]
+          },
+          {
+            "file": "gemma-4-E2B-it_Google_Tensor_G6.litertlm",
+            "sizeBytes": 3313938293,
+            "label": "Tensor G6 build",
+            "socMatch": [
+              "tensor_g6"
+            ]
+          }
+        ]
+      },
+      "sizeBytes": 2588147712,
+      "supportsVision": true,
+      "supportsAudio": false,
+      "supportsThinking": false,
+      "capabilitiesVerified": false,
+      "platforms": {
+        "android": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "GPU"
+        },
+        "ios": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "GPU"
+        }
+      },
+      "defaults": {
+        "temperature": 0.8,
+        "topK": 40,
+        "topP": 0.95,
+        "maxOutputTokens": 512
+      },
+      "notes": "The only ungated .litertlm model in the catalog, so it is the only one downloadable before Phase 5 adds token handling. 2.59 GB. The model card says vision and audio adapters load on demand, but that is unconfirmed on device, hence capabilitiesVerified=false. Repo also ships per-SoC builds, kept in variants; Phase 1 always downloads the generic file."
+    },
+    {
+      "id": "gemma3-1b-it-int4",
+      "displayName": "Gemma 3 1B IT (int4)",
+      "format": "litertlm",
+      "source": {
+        "type": "huggingface",
+        "repo": "litert-community/Gemma3-1B-IT",
+        "file": "gemma3-1b-it-int4.litertlm",
+        "gated": true,
+        "variants": [
+          {
+            "file": "Gemma3-1B-IT_multi-prefill-seq_q4_ekv4096.litertlm",
+            "sizeBytes": 584417280,
+            "label": "4096-token context build"
+          },
+          {
+            "file": "Gemma3-1B-IT_q4_ekv1280_sm8750.litertlm",
+            "sizeBytes": 689291264,
+            "label": "Snapdragon 8 Elite build",
+            "socMatch": [
+              "sm8750"
+            ]
+          }
+        ]
+      },
+      "sizeBytes": 584417280,
+      "supportsVision": false,
+      "supportsAudio": false,
+      "supportsThinking": false,
+      "capabilitiesVerified": false,
+      "platforms": {
+        "android": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "GPU"
+        },
+        "ios": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "GPU"
+        }
+      },
+      "defaults": {
+        "temperature": 0.8,
+        "topK": 40,
+        "topP": 0.95,
+        "maxOutputTokens": 512
+      },
+      "notes": "Fast text-only default, 557 MB. The Hugging Face repo is gated, so it cannot be downloaded in-app until Phase 5 adds the token field. Sideload it in the meantime."
+    },
+    {
+      "id": "gemma3-270m-it-q8",
+      "displayName": "Gemma 3 270M IT (q8)",
+      "format": "litertlm",
+      "source": {
+        "type": "url",
+        "url": "https://github.com/shanmukha-pothukuchi/local-ai-models/releases/download/models-v1/gemma3-270m-it-q8.litertlm",
+        "file": "gemma3-270m-it-q8.litertlm",
+        "sha256": "757e9119fa5bd667a2774fb470ac4afcd3190a21c677f8e69a5d6bc908abdd63",
+        "repo": "litert-community/gemma-3-270m-it",
+        "gated": false
+      },
+      "sizeBytes": 304005120,
+      "supportsVision": false,
+      "supportsAudio": false,
+      "supportsThinking": false,
+      "capabilitiesVerified": false,
+      "platforms": {
+        "android": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "CPU"
+        },
+        "ios": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "CPU"
+        }
+      },
+      "defaults": {
+        "temperature": 0.8,
+        "topK": 40,
+        "topP": 0.95,
+        "maxOutputTokens": 512
+      },
+      "notes": "Smallest usable model at 304 MB. Re-hosted unmodified on the project's public models repo because the Hugging Face original is gated. Verified generating on a Redmi Note 7 (API 29, CPU)."
+    },
+    {
+      "id": "qwen3.5-0.8b-vl-int8",
+      "displayName": "Qwen 3.5 0.8B VL (int8)",
+      "format": "litertlm",
+      "source": {
+        "type": "url",
+        "url": "https://huggingface.co/litert-community/Qwen3.5-0.8B/resolve/main/Qwen3.5-0.8B-VL_int8.litertlm",
+        "file": "Qwen3.5-0.8B-VL_int8.litertlm",
+        "sha256": "e3360b658c929ff35ab740a21f5e4b688096a72e351b8d347e26ccda314121b7",
+        "repo": "litert-community/Qwen3.5-0.8B",
+        "gated": false
+      },
+      "sizeBytes": 1302262448,
+      "estimatedPeakMemoryBytes": 2100000000,
+      "supportsVision": true,
+      "supportsAudio": false,
+      "supportsThinking": false,
+      "capabilitiesVerified": false,
+      "platforms": {
+        "android": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "CPU"
+        },
+        "ios": {
+          "backends": [
+            "CPU",
+            "GPU"
+          ],
+          "defaultBackend": "CPU"
+        }
+      },
+      "defaults": {
+        "temperature": 0.7,
+        "topK": 40,
+        "topP": 0.95,
+        "maxOutputTokens": 512
+      },
+      "notes": "Smallest vision-capable .litertlm available: 1.30 GB, ~2.1 GB peak RAM on CPU (Raspberry Pi 5 figure), one 512x512 image per turn. Ungated, so served straight from Hugging Face. The model card says low-end Android GPUs do not beat CPU for decode, hence CPU default. Borderline on a 4 GB phone."
+    }
+  ]
+}\n
